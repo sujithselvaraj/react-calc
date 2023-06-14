@@ -1,0 +1,14 @@
+.num-pad{
+    padding: 10px;
+    padding-left: 5px;
+    display: grid;
+    cursor:pointer;
+    grid-template-columns: repeat(4,50px);
+    gap: 20px;
+    width:200px;
+    height: 350px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
