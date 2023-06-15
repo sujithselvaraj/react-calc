@@ -1,31 +1,30 @@
 import React, { createContext, useState } from 'react'
 import Numpad from '../Numpad/Numpad';
 import "./Calculator.css"
-import Display from '../Display/Display';
+import ResultArea from '../ResultArea/ResultArea';
 
 export const ExpContext=createContext();
+
 const Calculator = () => {
 
-  const [exp,setExp]=useState("0");
+  const [expression,setExpression]=useState("0");
   const [isPerformed,setPerformed]=useState(false);
   const [lastOperation,setLastOperation]=useState("");
-  const [prevExp,setPrevExp]=useState("");
+  const [prevExpression,setPrevExpression]=useState("");
 
-
-
-
-   const dependencies={exp,setExp,lastOperation,setLastOperation,isPerformed,setPerformed,prevExp,setPrevExp};
+   const dependencies={expression,setExpression,lastOperation,setLastOperation,isPerformed,setPerformed,prevExpression,setPrevExpression};
 
   return (
 
     <ExpContext.Provider value={dependencies}>
 
      <div className='calculator'>
-        <Display/>
+        <ResultArea />
         <Numpad />
      </div>
      </ExpContext.Provider>
   );
 }
 
-export default React.memo(Calculator);
+export default Calculator;
+

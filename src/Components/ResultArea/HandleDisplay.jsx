@@ -18,7 +18,7 @@ function isOperator(value){
 
 function HandleDisplay(e,data)
 {
-    const{setExp,setLastOperation,setPerformed,prevExp,setPrevExp}=data;
+    const{setExpression,setLastOperation,setPerformed,prevExpression,setPrevExpression}=data;
 
     let temp=e.target.value;
 
@@ -32,11 +32,10 @@ function HandleDisplay(e,data)
         temp=trim(temp,2)+"+";
     }
    
+    
 
     if(isOperator(value))
     {
-
-
         setLastOperation("");
         setPerformed(false);
 
@@ -54,16 +53,15 @@ function HandleDisplay(e,data)
     //if the entered value is point and the second last is an operator it concatenates 0 with that
     if(value==="." && isOperator(mpeek(temp)))
     {
-
         temp=trim(temp,1)+'0'+value;
     }
 
 
+
     if(isNaN(mpeek(temp)) && isNaN(value) && (value==="+" || value==="/" || value==="*" || value==="%" )&& value!=="-" && value!==".")
     {
-
         temp=trim(temp,2)+value;
-        setPrevExp(temp);
+        setPrevExpression(temp);
         return;
     }
 
@@ -76,12 +74,11 @@ function HandleDisplay(e,data)
     var res=regexp.test(temp);
     if(!res)
     {
-
-        temp=prevExp;
+        temp=prevExpression;
     }
 
-    setExp(temp.toString());
-    setPrevExp(temp);
+    setExpression(temp.toString());
+    setPrevExpression(temp);
 
 };
 

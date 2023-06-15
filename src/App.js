@@ -1,5 +1,6 @@
 import Calculator from "./Components/Calculator/Calculator"
 import './App.css';
+import React from "react";
 
 function App() {
   function handleMove(){
@@ -7,7 +8,7 @@ function App() {
   }
   return (
   
-    <div className="app" onMouseMove={handleMove} onClick={handleMove}>
+    <div className="app" onClick={handleMove} onMouseMove={handleMove} >
      <Calculator/>
     </div>
     
@@ -15,3 +16,6 @@ function App() {
 }
 
 export default App;
+
+
+

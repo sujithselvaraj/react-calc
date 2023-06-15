@@ -7,7 +7,7 @@
     align-items: center;
     border: 9px black;
     border-radius: 80px;
-    /* color: orange;*/
+
     color: white;
     background-color: #2f2e2e;
 
@@ -25,9 +25,7 @@
 }
 
 .equal{
-    /* background-color:orange; */
     background-color:#6fdfe5;
-
     color: black;
 }
 
@@ -40,10 +38,10 @@
 
 .sign
 {
+    position:relative;
     color: black;
-    /* background-color: rgb(239, 167, 32); */
     background-color: #0096FF;
-    /* font-weight: bold; */
+
 }
 
 .c{
@@ -53,4 +51,14 @@
 .del{
     background-color: #a5a5a5;
 
+}
+
+.mul div{
+    display: block;
+    height: 29%;
+}
+
+.dot div{
+    display: block;
+   height:65%;
 }

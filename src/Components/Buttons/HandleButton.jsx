@@ -15,13 +15,15 @@ function peek(value){
   }
 
     //to handle the operations performed by the buttons present on the web page
+    
   function HandleButton(e,data){
+    
 
-
-    const {exp,setExp,setLastOperation,setPerformed,setPrevExp}=data;
+    const {expression,setExpression,setLastOperation,setPerformed,setPrevExpression}=data;
 
     let value=e.target.textContent;
-    var temp=exp.toString();
+    var temp=expression.toString();
+   
 
     //if user prresses the 'c'
     if(value==='C')
@@ -29,9 +31,9 @@ function peek(value){
       temp="0";
     }
 
-    if(value==="." && exp==="0")
+    if(value==="." && expression==="0")
     {
-        temp=exp+".";
+        temp=expression+".";
     }
 
     //if user presses the delete function ....delete the last most peek element and set the value to setprevexp 
@@ -42,7 +44,7 @@ function peek(value){
         temp="0";
       }
       temp=temp.substring(0,temp.length-1);
-      setPrevExp(temp);
+      setPrevExpression(temp);
     }
 
     //12+ next point occurs it changes to 12+0.
@@ -54,7 +56,6 @@ function peek(value){
     //already minus is there and again - it ll make it as plus
     if(value==="-" && peek(temp)==="-" && !isNaN(peek(trim(temp,1))))
     {
-        // console.log("button");
       temp=trim(temp,1)+ "+";
     }
 
@@ -71,7 +72,7 @@ function peek(value){
       }
     }
 
-    setExp(temp.toString());
+    setExpression(temp.toString());
 
     //if user presses the =
     if(value==="=")
@@ -82,10 +83,6 @@ function peek(value){
 
     var regexp =    /^(-|-?\d+|-?\d+\.|-?\d+\.\d+|-?\d+(\.\d+)?[+\-/%*]|(-?\d+(\.\d+)?[+\-/%*])+-|(-?\d+(\.\d+)?[+\-/%*])+-?\d+|(-?\d+(\.\d+)?[+\-/%*])+-?\d+\.|(-?\d+(\.\d+)?[+\-/%*])+-?\d+\.\d+|(-?\d+(\.\d+)?[+\-/%*])+-?\d+(\.\d+)?[+\-/%*])$/;
 
-    if(temp==="0")
-    {
-      temp="";
-    }
 
     //if the last value is an operator && last value is not an number like . && 
     if(isNaN(peek(temp)) && isNaN(value) && value!=="-" && value!==".")
@@ -100,14 +97,14 @@ function peek(value){
     }
 
     //if an expression length is equal to 1 prevexp is set with temp+value
-    if(exp.length===1)
+    if(expression.length===1)
     {
-      setPrevExp(temp+value);
+      setPrevExpression(temp+value);
     }
 
     if(regexp.test(temp+value))
     {
-      setExp(temp+value);
+      setExpression(temp+value);
     }
 
     return;

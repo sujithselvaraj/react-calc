@@ -41,14 +41,12 @@ const perform=(op,value1,value2)=>{
 
 //Calc function
 const Calc=(data)=>{
-    const {exp,setExp,lastOperation,setLastOperation,isPerformed,setPerformed,setPrevExp}=data;
-    var temp=exp.toString();
-
-   
+    const {expression,setExpression,lastOperation,setLastOperation,isPerformed,setPerformed,setPrevExpression}=data;
+    var temp=expression.toString();
 
     if(temp==="")
     {
-        setExp("");
+        setExpression("");
     }
 
     //the last character is an operator trim the operator 
@@ -59,25 +57,25 @@ const Calc=(data)=>{
 
     if(!isPerformed && !isNaN(temp))
     {
-        setExp(temp);
+        setExpression(temp);
         return;
     }
 
    var  tempp=lastOperation;
     if(!isPerformed)
     {
-        var i=exp.length-1;
+        var i=expression.length-1;
 
-        while((!isNaN(exp.charAt(i)) || exp.charAt(i)==="." || exp.charAt(i)==="-") && i>=0)
+        while((!isNaN(expression.charAt(i)) || expression.charAt(i)==="." || expression.charAt(i)==="-") && i>=0)
         {
-            if(exp.charAt(i)==="-" && !isNaN(exp.charAt(i-1)))
+            if(expression.charAt(i)==="-" && !isNaN(expression.charAt(i-1)))
             {
                 break;
             }
-            tempp=exp.charAt(i--)+tempp;
+            tempp=expression.charAt(i--)+tempp;
         }
 
-        tempp=exp.charAt(i)+tempp;
+        tempp=expression.charAt(i)+tempp;
         setLastOperation(tempp);
     }
 
@@ -153,8 +151,8 @@ const Calc=(data)=>{
         res=perform(op.pop(),values.pop(),values.pop());
         values.push(res);
       }
-      setExp(values.pop().toString());
-      setPrevExp(res.toString());
+      setExpression(values.pop());
+      setPrevExpression(res);
 
 };
 

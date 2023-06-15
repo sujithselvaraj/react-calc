@@ -10,7 +10,7 @@ let keys=[
     },
     {
         value:"*",
-        class:"sign"
+        class:"sign mul"
     },
     {
         value:"4"
@@ -62,7 +62,7 @@ let keys=[
     },
     {
         value:".",
-        class:"sign"
+        class:"sign dot"
     },
     {
         value:"=",
