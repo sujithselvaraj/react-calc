@@ -11,10 +11,11 @@ function Button({value,className}){
     {
       HandleButton(e,data);
     };
+
   return (
-    <button className={className} onClick={handleButtonClick}  >
-       
-        <div role='button'>{value}</div>
+    <button className={className} onClick={handleButtonClick} >
+        {/* {value}        */}
+        <div role='button' aria-label='button'>{value}</div>
     </button>
   );
 };

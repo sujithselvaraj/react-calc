@@ -1,6 +1,6 @@
 import React from 'react'
 import keys from './keys';
-import "./Numpad.css";
+import "../Buttons/Button.css";
 import Button from '../Buttons/Button';
 
 

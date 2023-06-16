@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react'
 import Numpad from '../Numpad/Numpad';
-import "./Calculator.css"
+import "../Buttons/Button.css"
 import ResultArea from '../ResultArea/ResultArea';
 
 export const ExpContext=createContext();
@@ -17,8 +17,9 @@ const Calculator = () => {
   return (
 
     <ExpContext.Provider value={dependencies}>
-
+{/* <h1 >Calculator</h1> */}
      <div className='calculator'>
+      
         <ResultArea />
         <Numpad />
      </div>

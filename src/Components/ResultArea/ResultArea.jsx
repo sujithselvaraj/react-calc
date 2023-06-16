@@ -1,5 +1,5 @@
 import React, { useContext, useEffect} from 'react'
-import "./ResultArea.css"
+import "../Buttons/Button.css"
 import { ExpContext } from '../Calculator/Calculator'
 import Calc from '../Buttons/Calc'
 import HandleDisplay from "./HandleDisplay"
@@ -40,7 +40,7 @@ useEffect(()=>{
 
 
   return (
-    <input className='display'  id="test" type='text' value={data.expression}  onKeyDown={handleKeyDown} onInput={handleInput} onClick={handleClick}  />
+    <input className='display'  id="test" type='text' value={data.expression}  onKeyDown={handleKeyDown} onInput={handleInput} onClick={handleClick} aria-label='result-box' />
   );
 };
 
